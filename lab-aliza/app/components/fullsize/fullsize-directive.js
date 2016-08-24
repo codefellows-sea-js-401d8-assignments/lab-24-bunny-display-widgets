@@ -10,7 +10,7 @@ module.exports = function(app) {
       bindToController: true,
       scope: {
         title: '@',
-        contents: '='
+        description: '='
       }
     };
   });

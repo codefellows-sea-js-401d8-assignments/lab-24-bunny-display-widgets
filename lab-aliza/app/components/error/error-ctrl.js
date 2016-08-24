@@ -2,9 +2,8 @@
 
 require('./error.scss');
 
-const angular = require('angular');
-const hackersApp = angular.module('hackersApp');
-
-hackersApp.controller('ErrorController', ['$rootScope', function($rootScope){
-  this.errorMessage = $rootScope.errorMessage;
-}]);
+module.exports = function(app){
+  app.controller('ErrorController', function(){
+    this.errorMessage = 'Error trying to access unknown path';
+  });
+};

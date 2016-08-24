@@ -9,8 +9,7 @@ module.exports = function(app) {
       controllerAs: 'ed',
       bindToController: true,
       scope: {
-        title: '@',
-        contents: '='
+        errorMessage: '='
       }
     };
   });

@@ -9,8 +9,7 @@ module.exports = function(app) {
       controllerAs: 'td',
       bindToController: true,
       scope: {
-        title: '@',
-        contents: '='
+        url: '@'
       }
     };
   });

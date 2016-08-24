@@ -4,6 +4,9 @@
 require('!!file?name=[name].[ext]!./html/index.html');
 require('./scss/base.scss');
 
+require('./components');
+require('./controllers');
+
 // npm modules
 const angular = require('angular');
 const angular_route = require('angular-route');
@@ -11,10 +14,6 @@ const angular_route = require('angular-route');
 // angular modules
 var app = angular.module('hackersApp', [angular_route]);
 
-app.run(['$rootScope', function($rootScope){
-  $rootScope.imageData = require('./controllers');
-  $rootScope.errorMessage = 'Error trying to access unknown path';
-}]);
 
 app.config(['$routeProvider', function($route) {
   $route
@@ -44,7 +43,3 @@ app.config(['$routeProvider', function($route) {
 }]);
 
 // angular components
-require('./components/home');
-require('./components/thumbnail');
-require('./components/fullsize');
-require('./components/error');

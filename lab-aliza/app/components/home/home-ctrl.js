@@ -1,8 +1,7 @@
 'use strict';
 
-const angular = require('angular');
-const hackersApp = angular.module('hackersApp');
-
-hackersApp.controller('HomeController', ['$rootScope', function($rootScope) {
-  this.images = $rootScope.imageData;
-}]);
+module.exports = function(app){
+  app.controller('HomeController', function() {
+    this.images = $rootScope.imageData;
+  });
+};
