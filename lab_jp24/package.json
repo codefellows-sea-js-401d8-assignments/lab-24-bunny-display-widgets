@@ -1,0 +1,44 @@
+{
+  "name": "lab-24-bunny-display-widgets",
+  "version": "1.0.0",
+  "description": "For this assignment, build three different display directives for an image url:   1. The first directive should display the title of the image, the link (not the  actual image), and short description.    1. The second directive should display the image as a \"thumbnail\" (within a 100x100 pixel scale).   1. The third directive should display the title, the full-size image, and the description.",
+  "main": "entry.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Firefly4266/lab-24-bunny-display-widgets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Firefly4266/lab-24-bunny-display-widgets/issues"
+  },
+  "homepage": "https://github.com/Firefly4266/lab-24-bunny-display-widgets#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "autoprefixer": "^6.4.0",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.13.2",
+    "clean-webpack-plugin": "^0.1.10",
+    "css-loader": "^0.24.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "node-sass": "^3.8.0",
+    "postcss-loader": "^0.10.1",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.0"
+  }
+}
