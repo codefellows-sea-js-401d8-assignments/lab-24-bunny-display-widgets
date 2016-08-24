@@ -43,3 +43,12 @@ hr {
 section {
   display: inline-block;
 }
+
+.text-section {
+  a:hover {
+    color: black;
+  }
+  ul {
+    color: black;
+  }
+}
