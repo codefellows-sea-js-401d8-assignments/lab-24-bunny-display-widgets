@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  background-color: $app-default;
+  background-color: $app-primary;
 }
 
 .brand {
@@ -21,4 +21,16 @@ body {
 
 hr {
   border-top: 1px solid #8c8b8b;
+}
+
+.section{
+  margin: 3rem;
+}
+
+.navbar{
+  background-color: $app-secondary;
+}
+
+.list-group-item{
+  background-color: $app-tertiary;
 }
