@@ -12,29 +12,29 @@ const angular_route = require('angular-route');
 var app = angular.module('hackersApp', [angular_route]);
 
 app.run(['$rootScope', function($rootScope){
-  $rootScope.imageData = require('./data/images.js');
+  $rootScope.imageData = require('./controllers');
   $rootScope.errorMessage = 'Error trying to access unknown path';
 }]);
 
 app.config(['$routeProvider', function($route) {
   $route
     .when('/', {
-      template: require('./view/home/home.html'),
+      template: require('./components/home/home.html'),
       controller: 'HomeController',
       controllerAs: 'hc'
     })
     .when('/thumbnail', {
-      template: require('./view/thumbnail/thumbnail.html'),
+      template: require('./components/thumbnail/thumbnail.html'),
       controller: 'ThumbnailController',
       controllerAs: 'th'
     })
     .when('/fullsize/:id', {
-      template: require('./view/fullsize/fullsize.html'),
+      template: require('./components/fullsize/fullsize.html'),
       controller: 'FullsizeController',
       controllerAs: 'fs'
     })
     .when('/error', {
-      template: require('./view/error/error.html'),
+      template: require('./components/error/error.html'),
       controller: 'ErrorController',
       controllerAs: 'er'
     })
@@ -44,7 +44,7 @@ app.config(['$routeProvider', function($route) {
 }]);
 
 // angular components
-require('./view/home');
-require('./view/thumbnail');
-require('./view/fullsize');
-require('./view/error');
+require('./components/home');
+require('./components/thumbnail');
+require('./components/fullsize');
+require('./components/error');

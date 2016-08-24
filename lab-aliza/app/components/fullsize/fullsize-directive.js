@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.directive('apFullsizeDirective', function() {
     return {
       restrict: 'EAC',
-      template: require('./home.html'),
+      template: require('./fullsize.html'),
       controller: 'FullsizeController',
       controllerAs: 'fd',
       bindToController: true,
