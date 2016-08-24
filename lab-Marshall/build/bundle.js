@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\n// webpack assets\n\n__webpack_require__(1);\n__webpack_require__(2);\n\n// npm modules\nvar angular = __webpack_require__(12);\nvar angular_route = __webpack_require__(14);\n\n// angular modules\nvar app = angular.module('demoApp', [angular_route]);\n\napp.run(['$rootScope', function ($rootScope) {\n  $rootScope.imageData = __webpack_require__(16);\n  $rootScope.errorMessage = 'Error: Can not access unknown page';\n}]);\n\napp.config(['$routeProvider', function ($route) {\n  $route.when('/', {\n    templateUrl: __webpack_require__(17),\n    controller: 'HomeController',\n    controllerAs: 'hc'\n  }).when('/thumbnail', {\n    templateUrl: __webpack_require__(18),\n    controller: 'ThumbnailController',\n    controllerAs: 'th'\n  }).when('fullsize/:id', {\n    templateUrl: __webpack_require__(19),\n    controller: 'FullsizeController',\n    controllerAs: 'fs'\n  }).when('/error', {\n    templateUrl: __webpack_require__(20),\n    controller: 'ErrorController',\n    controllerAs: 'er'\n  }).otherwise({\n    redirectTo: '/error'\n  });\n}]);\n\n// angular components\n__webpack_require__(21);\n__webpack_require__(22);\n__webpack_require__(23);\n__webpack_require__(24);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/entry.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/entry.js?");
+	eval("'use strict';\n\n// webpack assets\n\n__webpack_require__(1);\n__webpack_require__(2);\n\n// npm modules\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp', [__webpack_require__(14)]);\n\n// require('./controllers')(demoApp);\n__webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./components\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))(demoApp);\n\ndemoApp.run(['$rootScope', function ($rootScope) {\n  $rootScope.imageData = __webpack_require__(16);\n  $rootScope.errorMessage = 'Error: Can not access unknown page';\n}]);\n\ndemoApp.config(['$routeProvider', function ($route) {\n  $route.when('/error', {\n    template: __webpack_require__(17),\n    controller: 'ErrorController',\n    controllerAs: 'er'\n  }).otherwise({\n    redirectTo: '/error'\n  });\n}]);\n\n__webpack_require__(18);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/entry.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/entry.js?");
 
 /***/ },
 /* 1 */
@@ -101,55 +101,19 @@
 /* 17 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <!--bootstrap tip - to center set an offset equal to half of the remaining size of the row-->\\n    <div class=\\\"list-group col-md-6  col-md-offset-3\\\">\\n      <a ng-repeat=\\\"img in hc.images track by $index\\\" href=\\\"#/fullsize{{img.id}}\\\" class=\\\"list-group-item\\\">{{img.description}}</a>\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/home/home.html\n ** module id = 17\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/home/home.html?");
+	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div>\\n    <div>\\n      <i class=\\\"stop fa fa-hand-paper-o\\\"></i> Error: {{errorMessage}}\\n    </div>\\n    <div class=\\\"alert alert-danger\\\">\\n      <strong>Warning! </strong> Can't access resource.\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/error/error.html\n ** module id = 17\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/error/error.html?");
 
 /***/ },
 /* 18 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <div ng-repeat=\\\"img in th.images\\\" class=\\\"col-xs-2\\\">\\n      <a href=\\\"#/fullsize/{{img.id}}\\\" class=\\\"thumbnail\\\">\\n        <img ng-src=\\\"{{img.url}}\\\" height=\\\"100\\\" width=\\\"100\\\" />\\n      </a>\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/thumbnail/thumbnail.html\n ** module id = 18\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/thumbnail/thumbnail.html?");
+	eval("'use strict';\n\n__webpack_require__(19);\n\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp');\n\ndemoApp.controller('ErrorController', ['$rootScope', function ($rootScope) {\n  this.errorMessage = $rootScope.errorMessage;\n}]);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/error/index.js\n ** module id = 18\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/error/index.js?");
 
 /***/ },
 /* 19 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div class =\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <div class=\\\"col-md-6 col-md-offeset-3\\\">\\n      <h1>{{fs.image.description}}</h1>\\n      <img ng-src=\\\"{{fs.image.url}}\\\" height=\\\"400\\\" width=\\\"400\\\" />\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/fullsize/fullsize.html\n ** module id = 19\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/fullsize/fullsize.html?");
-
-/***/ },
-/* 20 */
-/***/ function(module, exports) {
-
-	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div>\\n    <div>\\n      <i class=\\\"stop fa fa-hand-paper-o\\\"></i> Error: {{errorMessage}}\\n    </div>\\n    <div class=\\\"alert alert-danger\\\">\\n      <strong>Warning! </strong> Can't access resource.\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/error/error.html\n ** module id = 20\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/error/error.html?");
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	eval("'use strict';\n\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp');\n\ndemoApp.controller('HomeController', ['$rootScope', HomeController]);\n\nfunction HomeController($rootScope) {\n  this.images = $rootScope.imageData;\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/home/index.js\n ** module id = 21\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/home/index.js?");
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-	eval("'use strict';\n\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp');\n\ndemoApp.controller('ThumbnailController', ['$rootScope', ThumbnailController]);\n\nfunction ThumbnailController($rootScope) {\n  this.images = $rootScope.imageData;\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/thumbnail/index.js\n ** module id = 22\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/thumbnail/index.js?");
-
-/***/ },
-/* 23 */
-/***/ function(module, exports, __webpack_require__) {
-
-	eval("'use strict';\n\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp');\n\ndemoApp.controller('FullsizeController', ['$routeParams', '$rootScope', '$location', function ($routeParams, $rootScope, $location) {\n  this.images = $rootScope.imageData;\n\n  this.isValidId = function (id) {\n    if (isNaN(id)) return false;\n    if (!isFinite(id)) return false;\n    if (id < 1) return false;\n    if (typeof this.images[id - 1] === 'undefined') return false;\n    return true;\n  };\n\n  var id = Number.parseInt($routeParams.id);\n  if (!this.isValidId(id)) {\n    $location.path('/error');\n  }\n  this.image = this.images[id - 1];\n}]);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/fullsize/index.js\n ** module id = 23\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/fullsize/index.js?");
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-	eval("'use strict';\n\n__webpack_require__(25);\n\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp');\n\ndemoApp.controller('ErrorController', ['$rootScope', function ($rootScope) {\n  this.errorMessage = $rootScope.errorMessage;\n}]);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/error/index.js\n ** module id = 24\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/error/index.js?");
-
-/***/ },
-/* 25 */
-/***/ function(module, exports) {
-
-	eval("// removed by extract-text-webpack-plugin\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/error/error.scss\n ** module id = 25\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/error/error.scss?");
+	eval("// removed by extract-text-webpack-plugin\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/error/error.scss\n ** module id = 19\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/error/error.scss?");
 
 /***/ }
 /******/ ]);

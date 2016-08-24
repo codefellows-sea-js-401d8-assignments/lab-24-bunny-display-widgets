@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = function(demoApp){
-  demoApp.controller('ThumbnailController', ['$rootScope', ThumbnailController]);
+  demoApp.controller('ThumbnailController', ['$rootScope', HomeController]);
 
-  function ThumbnailController($rootScope){
+  function HomeController($rootScope){
     this.images = $rootScope.imageData;
   }
 };
