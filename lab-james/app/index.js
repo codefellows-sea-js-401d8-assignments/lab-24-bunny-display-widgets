@@ -21,7 +21,12 @@ imageApp.config(['$routeProvider', function($route) {
       controller: 'ImageController',
       controllerAs: 'ic'
     })
+    .when('/fullsize/:id', {
+      template: require('./html/fullsize.html'),
+      controller: 'ImageController',
+      controllerAs: 'ic'
+    })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/error'
     });
 }]);
