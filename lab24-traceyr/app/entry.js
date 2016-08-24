@@ -21,9 +21,11 @@ app.config(['$routeProvider', function($route) {
       controller: 'ImageController',
       controllerAs: 'hc'
     })
-    // .when('/text', {
-    //   template: require('./components/text_component/text_directive')
-    // })
+    .when('/text', {
+      template: require('./html/text.html'),
+      controller: 'ImageController',
+      controllerAs: 'tc'
+    })
     .otherwise({
       redirectTo: '/'
     });
