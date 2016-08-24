@@ -9,7 +9,7 @@
     "test": "karma start"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tre Cain",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.8",
