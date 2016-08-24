@@ -33,6 +33,9 @@ app.config(['$routeProvider', function($route) {
       controller: 'FullsizeController',
       controllerAs: 'fullsizeCtrl',
     })
+    .when('/all-views', {
+      templateUrl:'/app/view/all-views/all-views.html',
+    })
     .when('/error', {
       templateUrl: '/app/view/error/error.html',
       controller: 'ErrorController',
