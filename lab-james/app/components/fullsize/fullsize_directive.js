@@ -12,7 +12,7 @@ module.exports = function(app) {
         title: '@',
         description: '@',
         url: '@',
-        showPicture: '@'
+        showFullsize: '@'
       }
     };
   });
