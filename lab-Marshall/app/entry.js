@@ -11,13 +11,13 @@ const demoApp = angular.module('demoApp', [require('angular-route')]);
 // require('./controllers')(demoApp);
 require('./components')(demoApp);
 
-demoApp.run(['$rootScope', function($rootScope){
-  $rootScope.imageData = require('./data/images.js');
-  $rootScope.errorMessage = 'Error: Can not access unknown page';
-}]);
-
 demoApp.config(['$routeProvider', function($route) {
   $route
+    .when('/', {
+      template: require('./html/home.html'),
+      controller: 'ImgController',
+      controllerAs: 'img'
+    })
     .when('/error', {
       template: require('./view/error/error.html'),
       controller: 'ErrorController',
