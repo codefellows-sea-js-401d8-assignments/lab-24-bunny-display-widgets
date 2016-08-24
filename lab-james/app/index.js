@@ -16,6 +16,11 @@ imageApp.config(['$routeProvider', function($route) {
       controller: 'ImageController',
       controllerAs: 'ic'
     })
+    .when('/mugshot', {
+      template: require('./html/mugshot.html'),
+      controller: 'ImageController',
+      controllerAs: 'ic'
+    })
     .otherwise({
       redirectTo: '/'
     });
