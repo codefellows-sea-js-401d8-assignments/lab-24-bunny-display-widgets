@@ -1,3 +1,7 @@
-<div>
-
+<div class="container">
+  <div class="row">
+    <div class="list-group col-md-6  col-md-offset-3">
+      <a ng-repeat="bunny in bc.bunnies" href="{{bunny.url}}">{{bunny.description}}</a>
+    </div>
+  </div>
 </div>

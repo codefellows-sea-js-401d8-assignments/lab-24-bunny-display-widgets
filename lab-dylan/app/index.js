@@ -1,7 +1,7 @@
 require('!!file?name=[name].[ext]!./html/index.html');
 
 const angular = require('angular');
-const demoApp = angular.module('demoApp');
+const demoApp = angular.module('demoApp', [require('angular-route')]);
 
 require('./controllers')(demoApp);
 require('./components')(demoApp);

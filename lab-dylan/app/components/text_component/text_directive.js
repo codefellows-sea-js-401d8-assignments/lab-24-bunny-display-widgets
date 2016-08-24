@@ -8,8 +8,8 @@ module.exports = function(app) {
       controllerAs: 'textCtrl',
       bindToController: true,
       scope: {
-        title: '@',
-        contents: '@'
+        description: '@',
+        url: '@'
       }
     };
   });
