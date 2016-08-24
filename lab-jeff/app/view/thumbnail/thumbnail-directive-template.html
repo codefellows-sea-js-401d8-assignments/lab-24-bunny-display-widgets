@@ -1,0 +1,5 @@
+<div class="row">
+  <a ng-repeat="image in thumbnailCtrl.images" href="#/fullsize/{{ image.id }}">
+    <img ng-src="{{ image.url }}" height="100" width="100"/>
+  </a>
+</div>

@@ -1,5 +1,5 @@
 'use strict';
-require('./error.scss');
+require('./_error.scss');
 
 const angular = require('angular');
 const hobbitApp = angular.module('hobbitApp');

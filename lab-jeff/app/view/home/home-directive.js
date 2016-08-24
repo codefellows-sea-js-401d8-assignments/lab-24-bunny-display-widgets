@@ -3,7 +3,7 @@
 const angular = require('angular');
 const hobbitApp = angular.module('hobbitApp');
 
-hobbitApp.directive('jgThumbnailDirective', function(){
+hobbitApp.directive('jgHomeDirective', function(){
   return {
     restrict: 'EAC',
     scope: {
@@ -12,8 +12,8 @@ hobbitApp.directive('jgThumbnailDirective', function(){
       url: '@',
     },
     bindToController: true,
-    controller: 'ThumbnailController',
-    controllerAs: 'thumbnailCtrl',
-    template: require('./thumbnail-directive-template.html'),
+    controller: 'HomeController',
+    controllerAs: 'homeCtrl',
+    template: require('./home-directive-template.html'),
   };
 });

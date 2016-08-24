@@ -51,3 +51,5 @@ require('./view/error/error.js');
 
 //directives
 require('./view/thumbnail/thumbnail-directive.js');
+require('./view/home/home-directive.js');
+require('./view/fullsize/fullsize-directive.js');
