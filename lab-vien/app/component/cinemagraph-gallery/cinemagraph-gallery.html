@@ -1,0 +1,24 @@
+<section>
+
+  <section class="text-section">
+    <h2>Text</h2>
+    <ul class="list-group col-md-6 col-md-offset-3">
+      <cinemagraph-gallery-text ng-repeat="item in cinemagraphGalleryCtrl.gallery" title="{{item.title}}" year="{{item.year}}" imdb="{{item.imdb}}" quote="{{item.quote}}">
+    </ul>
+  </section>
+
+  <section class="thumbnail-section">
+    <h2>Thumbs</h2>
+    <div class="row row-centered">
+      <cinemagraph-gallery-thumbnail ng-repeat="item in cinemagraphGalleryCtrl.gallery" title="{{item.title}}" image="{{item.image}}">
+    </div>
+  </section>
+
+  <section class="fullsize-section">
+    <h2>Fullsize</h2>
+    <div class="row row-centered">
+      <cinemagraph-gallery-fullsize ng-repeat="item in cinemagraphGalleryCtrl.gallery" title="{{item.title}}" year="{{item.year}}" imdb="{{item.imdb}}" quote="{{item.quote}}" image="{{item.image}}">
+    </div>
+  </section>
+
+</section>
