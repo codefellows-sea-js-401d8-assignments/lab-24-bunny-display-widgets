@@ -9,10 +9,22 @@ require('./controllers')(imageApp);
 require('./components')(imageApp);
 
 imageApp.config(['$routeProvider', function($route) {
-  $route.when('/home', {
+  $route
+  .when('/home', {
     template: require('./html/home.html'),
     controller: 'ImageController',
-    controllerAs: 'ic'})
+    controllerAs: 'ic'
+  })
+    .when('/thumbnail', {
+      template: require('./html/home.html'),
+      controller: 'ImageController',
+      controllerAs: 'ic'
+    })
+    .when('/fullsize', {
+      template: require('./html/home.html'),
+      controller: 'ImageController',
+      controllerAs: 'ic'
+    })
     .otherwise({
       redirectTo: '/home'
     });
