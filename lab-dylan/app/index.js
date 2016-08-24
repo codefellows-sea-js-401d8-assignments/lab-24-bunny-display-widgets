@@ -10,7 +10,7 @@ demoApp.config(['$routeProvider', function($route) {
   $route.when('/home', {
     template: require('./html/home.html'),
     controller: 'BunnyController',
-    controllerAs: 'dc'
+    controllerAs: 'bc'
   })
   .otherwise({
     redirectTo: '/home'
