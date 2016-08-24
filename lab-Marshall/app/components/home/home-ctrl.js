@@ -1,7 +1,9 @@
-' use strict';
+'use strict';
 
 module.exports = function(demoApp){
-  demoApp.directive('mmmHomeDirective', function(){
+  demoApp.controller('ThumbnailController', ['$rootScope', ThumbnailController]);
 
-  });
+  function ThumbnailController($rootScope){
+    this.images = $rootScope.imageData;
+  }
 };

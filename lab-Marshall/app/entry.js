@@ -6,8 +6,7 @@ require('./scss/base.scss');
 
 // npm modules
 const angular = require('angular');
-const angular_route = require('angular-route');
-const demoApp = angular.module('demoApp', [angular_route]);
+const demoApp = angular.module('demoApp', [require('angular-route')]);
 
 // require('./controllers')(demoApp);
 require('./components')(demoApp);
@@ -21,11 +20,11 @@ demoApp.run(['$rootScope', function($rootScope){
 
 demoApp.config(['$routeProvider', function($route) {
   $route
-    .when('/', {
-      template: require('./components/home/home.html'),
-      controller: 'HomeController',
-      controllerAs: 'hc'
-    })
+    // .when('/', {
+    //   template: require('./components/home/home.html'),
+    //   controller: 'HomeController',
+    //   controllerAs: 'hc'
+    // })
     // .when('/thumbnail', {
     //   template: require('./view/thumbnail/thumbnail.html'),
     //   controller: 'ThumbnailController',
