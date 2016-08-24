@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(app) {
-  app.directive('pixFullsizeDirective',function() {
+  app.directive('pixFullsizeDirective', function() {
     return {
       template: require('./fullsize_directive.html'),
       controller: 'FullsizeController',
@@ -11,7 +11,8 @@ module.exports = function(app) {
         id: '@',
         title: '@',
         description: '@',
-        url: '@'
+        url: '@',
+        showPicture: '@'
       }
     };
   });
