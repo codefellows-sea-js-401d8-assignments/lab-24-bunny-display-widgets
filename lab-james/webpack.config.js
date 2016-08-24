@@ -14,14 +14,14 @@ let plugins = [
 ];
 
 module.exports = {
-  entry: `${__dirname}/app`,
+  entry: `${__dirname}/app/index.js`,
   output: {
     path: 'build',
     filename: 'bundle.js'
   },
   plugins: plugins,
   postcss: function() {
-    [autoprefixer];
+    return [autoprefixer];
   },
   sassLoader: {
     includePaths: [`${__dirname}/app/scss/lib`]
@@ -49,7 +49,7 @@ module.exports = {
         loader: 'file?name=image/[hash]-[name].[ext]'
       },
       {
-        test: /\.(wof|svg|eot|ttf).*/,
+        test: /\.(woff|svg|eot|ttf).*/,
         loader: 'file?limit=10000&name=font/[name].[ext]'
       }
     ]
