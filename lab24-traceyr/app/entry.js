@@ -9,7 +9,7 @@ const angular = require('angular');
 const angular_route = require('angular-route');
 
 // angular modules
-var app = angular.module('demoApp', [angular_route]);
+var app = angular.module('lab24', [angular_route]);
 
 app.config(['$routeProvider', function($route) {
   $route

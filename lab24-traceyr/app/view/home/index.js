@@ -1,8 +1,8 @@
 'use strict';
 
 const angular = require('angular');
-const demoApp = angular.module('demoApp');
+const lab24 = angular.module('lab24');
 
-demoApp.controller('HomeController', [function() {
+lab24.controller('HomeController', [function() {
   this.messages = ['hello', 'hello', 'hello'];
 }]);
