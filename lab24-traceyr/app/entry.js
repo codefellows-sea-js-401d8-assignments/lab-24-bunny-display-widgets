@@ -11,13 +11,19 @@ const angular_route = require('angular-route');
 // angular modules
 var app = angular.module('lab24', [angular_route]);
 
+require('./controller')(app);
+require('./components')(app);
+
 app.config(['$routeProvider', function($route) {
   $route
     .when('/', {
-      templateUrl: '/app/view/home/home.html',
-      controller: 'HomeController',
+      template: require('./html/home.html'),
+      controller: 'ImageController',
       controllerAs: 'hc'
     })
+    // .when('/text', {
+    //   template: require('./components/text_component/text_directive')
+    // })
     .otherwise({
       redirectTo: '/'
     });
