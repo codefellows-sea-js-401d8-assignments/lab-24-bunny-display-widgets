@@ -1,14 +1,12 @@
 'use strict';
 
-// webpack assets
 require('!!file?name=[name].[ext]!./html/index.html');
 require('./scss/base.scss');
 
-// npm modules
 const angular = require('angular');
 const demoApp = angular.module('demoApp', [require('angular-route')]);
 
-// require('./controllers')(demoApp);
+require('./controllers')(demoApp);
 require('./components')(demoApp);
 
 demoApp.config(['$routeProvider', function($route) {
@@ -18,14 +16,17 @@ demoApp.config(['$routeProvider', function($route) {
       controller: 'ImgController',
       controllerAs: 'img'
     })
-    .when('/error', {
-      template: require('./view/error/error.html'),
-      controller: 'ErrorController',
-      controllerAs: 'er'
+    .when('/thumbnail', {
+      template: require('./html/thumbnail.html'),
+      controller: 'ImgController',
+      controllerAs: 'img'
+    })
+    .when('/fullsize', {
+      template: require('./html/fullsize.html'),
+      controller: 'ImgController',
+      controllerAs: 'img'
     })
     .otherwise({
-      redirectTo: '/error'
+      redirecTo: '/'
     });
 }]);
-
-require('./view/error');

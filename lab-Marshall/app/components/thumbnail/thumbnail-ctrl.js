@@ -1,9 +1,7 @@
 'use strict';
 
 module.exports = function(demoApp){
-  demoApp.controller('ThumbnailController', ['$rootScope', ThumbnailController]);
-
-  function ThumbnailController($rootScope){
-    this.images = $rootScope.imageData;
-  }
+  demoApp.controller('ThumbnailController', function(){
+    this.images = this.images || 'No thumbnail found!';
+  });
 };

@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\n// webpack assets\n\n__webpack_require__(1);\n__webpack_require__(2);\n\n// npm modules\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp', [__webpack_require__(14)]);\n\n// require('./controllers')(demoApp);\n__webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./components\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))(demoApp);\n\ndemoApp.run(['$rootScope', function ($rootScope) {\n  $rootScope.imageData = __webpack_require__(16);\n  $rootScope.errorMessage = 'Error: Can not access unknown page';\n}]);\n\ndemoApp.config(['$routeProvider', function ($route) {\n  $route.when('/error', {\n    template: __webpack_require__(17),\n    controller: 'ErrorController',\n    controllerAs: 'er'\n  }).otherwise({\n    redirectTo: '/error'\n  });\n}]);\n\n__webpack_require__(18);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/entry.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/entry.js?");
+	eval("'use strict';\n\n// webpack assets\n\n__webpack_require__(1);\n__webpack_require__(2);\n\n// npm modules\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp', [__webpack_require__(14)]);\n\n__webpack_require__(16)(demoApp);\n__webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./components\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))(demoApp);\n\ndemoApp.config(['$routeProvider', function ($route) {\n  $route.when('/', {\n    template: __webpack_require__(18),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  });\n}]);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/entry.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/entry.js?");
 
 /***/ },
 /* 1 */
@@ -93,27 +93,21 @@
 
 /***/ },
 /* 16 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\nmodule.exports = [{\n  id: 1,\n  url: 'http://vignette1.wikia.nocookie.net/onepunchman/images/1/18/Slider_dos.png/revision/latest/scale-to-width-down/670?cb=20130220223313',\n  description: 'Saitama 1'\n}, {\n  id: 2,\n  url: 'http://media.fyre.co/HmWDsHkfTFyShq7GqbE1_b01.png',\n  description: 'Saitama 2'\n}, {\n  id: 3,\n  url: 'https://de7i3bh7bgh0d.cloudfront.net/2016/07/13/20/36/14/222e1fed-24d4-4ead-bb74-52e888eef12b/viz-blog_saitama.jpg',\n  description: 'Saitama 3'\n}, {\n  id: 4,\n  url: 'https://images.alphacoders.com/656/656720.jpg',\n  description: 'Saitama 4'\n}];\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/data/images.js\n ** module id = 16\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/data/images.js?");
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  __webpack_require__(17)(demoApp);\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/controllers/index.js\n ** module id = 16\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/controllers/index.js?");
 
 /***/ },
 /* 17 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div>\\n    <div>\\n      <i class=\\\"stop fa fa-hand-paper-o\\\"></i> Error: {{errorMessage}}\\n    </div>\\n    <div class=\\\"alert alert-danger\\\">\\n      <strong>Warning! </strong> Can't access resource.\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/error/error.html\n ** module id = 17\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/error/error.html?");
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  demoApp.controller('ImgController', function () {\n    this.images = [{\n      id: 1,\n      url: 'http://vignette1.wikia.nocookie.net/onepunchman/images/1/18/Slider_dos.png/revision/latest/scale-to-width-down/670?cb=20130220223313',\n      description: 'Saitama 1'\n    }, {\n      id: 2,\n      url: 'http://media.fyre.co/HmWDsHkfTFyShq7GqbE1_b01.png',\n      description: 'Saitama 2'\n    }, {\n      id: 3,\n      url: 'https://de7i3bh7bgh0d.cloudfront.net/2016/07/13/20/36/14/222e1fed-24d4-4ead-bb74-52e888eef12b/viz-blog_saitama.jpg',\n      description: 'Saitama 3'\n    }, {\n      id: 4,\n      url: 'https://images.alphacoders.com/656/656720.jpg',\n      description: 'Saitama 4'\n    }];\n  });\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/controllers/images.js\n ** module id = 17\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/controllers/images.js?");
 
 /***/ },
 /* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-	eval("'use strict';\n\n__webpack_require__(19);\n\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp');\n\ndemoApp.controller('ErrorController', ['$rootScope', function ($rootScope) {\n  this.errorMessage = $rootScope.errorMessage;\n}]);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/error/index.js\n ** module id = 18\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/error/index.js?");
-
-/***/ },
-/* 19 */
 /***/ function(module, exports) {
 
-	eval("// removed by extract-text-webpack-plugin\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/view/error/error.scss\n ** module id = 19\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/view/error/error.scss?");
+	eval("module.exports = \"<div>\\n  <h1>Will the images display?</h1>\\n  <ul>\\n  \\t<li data-ng-repeat=\\\"post in dc.posts\\\">\\n      <div data-cf-dummy-directive data-ng-if=\\\"post.mutable\\\" data-title=\\\"{{post.title}}\\\" data-contents=\\\"post.contents\\\"></div>\\n      <div data-cf-another-directive data-ng-if=\\\"!post.mutable\\\" data-title=\\\"{{post.title}}\\\" data-contents=\\\"post.contents\\\"></div>\\n\\n    </li>\\n  </ul>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/html/home.html\n ** module id = 18\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/html/home.html?");
 
 /***/ }
 /******/ ]);
