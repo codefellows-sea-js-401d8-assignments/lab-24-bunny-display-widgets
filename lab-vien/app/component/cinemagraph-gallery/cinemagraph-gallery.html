@@ -9,10 +9,8 @@
 
   <section class="thumbnail-section">
     <h2>Thumbs</h2>
-    <div class="container">
-      <div class="row">
-        <cinemagraph-gallery-thumbnail ng-repeat="item in cinemagraphGalleryCtrl.gallery" title="{{item.title}}" image="{{item.image}}">
-      </div>
+    <div class="row row-centered">
+      <cinemagraph-gallery-thumbnail ng-repeat="item in cinemagraphGalleryCtrl.gallery" title="{{item.title}}" image="{{item.image}}">
     </div>
   </section>
 
