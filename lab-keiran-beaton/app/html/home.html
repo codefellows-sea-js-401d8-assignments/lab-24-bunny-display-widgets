@@ -1,14 +1,10 @@
 <div>
   <h1> Really Good Header for Image App</h1>
-  <p><a href="#/thumbnail">click for thumbnail</a></p>
-  <p><a href="#/fullsize">click for fullsize</a></p>
-  <p><a href="#/home">click for home</a></p>
   <ul>
     <li data-ng-repeat="img in ic.images">
       <div data-kb-text-directive  data-title="{{img.title}}" data-url="{{img.url}}" data-description="{{img.description}}"></div>
       <div data-kb-thumbnail-directive data-title="{{img.title}}" data-url="{{img.url}}" data-description="{{img.description}}"></div>
       <div data-kb-fullsize-directive data-title="{{img.title}}" data-url="{{img.url}}" data-description="{{img.description}}"></div>
-
     </li>
   </ul>
 </div>

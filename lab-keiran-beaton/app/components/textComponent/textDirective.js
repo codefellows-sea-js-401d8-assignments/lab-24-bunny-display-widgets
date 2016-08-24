@@ -5,7 +5,7 @@ module.exports = function(app) {
     return {
       restrict: 'EAC',
       template: require('./textDirective.html'),
-      controller: 'ImageController',
+      controller: 'TextDirectiveController',
       controllerAs: 'td',
       bindToController: true,
       scope: {

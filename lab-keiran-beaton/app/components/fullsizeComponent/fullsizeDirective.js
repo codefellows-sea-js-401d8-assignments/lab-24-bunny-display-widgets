@@ -5,7 +5,7 @@ module.exports = function(app) {
     return {
       restrict: 'EAC',
       template: require('./fullsizeDirective.html'),
-      controller: 'ImageController',
+      controller: 'FullsizeDirectiveController',
       controllerAs: 'fd',
       bindToController: true,
       scope: {
