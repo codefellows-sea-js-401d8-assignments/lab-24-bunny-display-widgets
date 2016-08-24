@@ -16,21 +16,6 @@ imageApp.config(['$routeProvider', function($route) {
       controller: 'ImageController',
       controllerAs: 'ic'
     })
-    .when('/fullsize/:id', {
-      template: require('./components/fullsizeComponent/fullsizeDirective.html'),
-      controller: 'ImageController',
-      controllerAs: 'ic'
-    })
-    .when('/text', {
-      template: require('./components/textComponent/textDirective.html'),
-      controller: 'ImageController',
-      controllerAs: 'ic'
-    })
-    .when('/thumbnail', {
-      template: require('./components/thumbnailComponent/thumbnailDirective.html'),
-      controller: 'ImageController',
-      controllerAs: 'ic'
-    })
     .otherwise({
       redirectTo: '/home'
     });

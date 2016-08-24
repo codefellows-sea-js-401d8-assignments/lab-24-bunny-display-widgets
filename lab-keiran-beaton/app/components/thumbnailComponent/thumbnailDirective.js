@@ -9,7 +9,9 @@ module.exports = function(app) {
       controllerAs: 'thd',
       bindToController: true,
       scope: {
-        url: '@'
+        title: '@',
+        url: '@',
+        description: '@'
       }
     };
   });
