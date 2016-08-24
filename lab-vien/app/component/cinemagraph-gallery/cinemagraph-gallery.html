@@ -2,7 +2,7 @@
 
   <section class="text-section">
     <h2>Text</h2>
-    <ul>
+    <ul class="list-group col-md-6 col-md-offset-3">
       <cinemagraph-gallery-text ng-repeat="item in cinemagraphGalleryCtrl.gallery" title="{{item.title}}" year="{{item.year}}" imdb="{{item.imdb}}" quote="{{item.quote}}">
     </ul>
   </section>
@@ -16,7 +16,9 @@
 
   <section class="fullsize-section">
     <h2>Fullsize</h2>
-    <cinemagraph-gallery-fullsize ng-repeat="item in cinemagraphGalleryCtrl.gallery" title="{{item.title}}" year="{{item.year}}" imdb="{{item.imdb}}" quote="{{item.quote}}" image="{{item.image}}">
+    <div class="row row-centered">
+      <cinemagraph-gallery-fullsize ng-repeat="item in cinemagraphGalleryCtrl.gallery" title="{{item.title}}" year="{{item.year}}" imdb="{{item.imdb}}" quote="{{item.quote}}" image="{{item.image}}">
+    </div>
   </section>
 
 </section>
