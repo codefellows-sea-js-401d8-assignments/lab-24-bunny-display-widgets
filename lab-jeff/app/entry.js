@@ -46,11 +46,12 @@ app.config(['$routeProvider', function($route) {
     });
 }]);
 
-// angular components
+//views
 require('./view/home/home.js');
 require('./view/thumbnail/thumbnail.js');
 require('./view/fullsize/fullsize.js');
 require('./view/error/error.js');
+
 
 //directives
 require('./view/thumbnail/thumbnail-directive.js');
