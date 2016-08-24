@@ -5,7 +5,7 @@ module.exports = function(app) {
     return {
       restrict: 'EAC',
       template: require('./thumbnailDirective.html'),
-      controller: 'ThumbnailDirectiveController',
+      controller: 'ImageController',
       contollerAs: 'thd',
       bindToController: true,
       scope: {
