@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(app) {
-  app.controller('ThumbnailDirectiveController', function(){
+  app.controller('FullsizeDirectiveController', function(){
     console.log('Am I loaded?');
     console.log(this.image);
   });
