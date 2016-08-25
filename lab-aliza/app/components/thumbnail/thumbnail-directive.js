@@ -6,7 +6,7 @@ module.exports = function(app) {
       restrict: 'EAC',
       template: require('./thumbnail-template.html'),
       controller: 'ImageController',
-      controllerAs: 'td',
+      controllerAs: 'tnd',
       bindToController: true,
       scope: {
         url: '@'

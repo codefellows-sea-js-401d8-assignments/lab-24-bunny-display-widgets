@@ -6,12 +6,12 @@ module.exports = function(app) {
       restrict: 'EAC',
       template: require('./fullsize-template.html'),
       controller: 'ImageController',
-      controllerAs: 'fs',
+      controllerAs: 'fsd',
       bindToController: true,
       scope: {
-        title: '@',
-        description: '@',
-        url: '@'
+        title: '=',
+        description: '=',
+        url: '='
       }
     };
   });

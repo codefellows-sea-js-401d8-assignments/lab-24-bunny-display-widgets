@@ -14,19 +14,19 @@ require('./controllers')(app);
 app.config(['$routeProvider', function($route) {
   $route
     .when('/', {
-      template: require('./components/home/home.html'),
+      template: require('./html/home.html'),
       controller: 'ImageController',
-      controllerAs: 'hc'
+      controllerAs: 'hd'
     })
     .when('/thumbnail', {
-      template: require('./components/thumbnail/thumbnail.html'),
+      template: require('./html/thumbnail.html'),
       controller: 'ImageController',
-      controllerAs: 'th'
+      controllerAs: 'tnd'
     })
     .when('/fullsize/:id', {
-      template: require('./components/fullsize/fullsize.html'),
+      template: require('./html/fullsize.html'),
       controller: 'ImageController',
-      controllerAs: 'fs'
+      controllerAs: 'fsd'
     })
     .otherwise({
       redirectTo: '/'
