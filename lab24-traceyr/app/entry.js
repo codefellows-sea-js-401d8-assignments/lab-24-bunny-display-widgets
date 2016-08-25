@@ -24,7 +24,12 @@ app.config(['$routeProvider', function($route) {
     .when('/text', {
       template: require('./html/text.html'),
       controller: 'ImageController',
-      controllerAs: 'tc'
+      controllerAs: 'hc'
+    })
+    .when('/thumbnail', {
+      template: require('./html/thumbnail.html'),
+      controller: 'ImageController',
+      controllerAs: 'hc'
     })
     .otherwise({
       redirectTo: '/'
