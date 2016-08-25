@@ -4,8 +4,8 @@ module.exports = function(app) {
   app.directive('apHomeDirective', function() {
     return {
       restrict: 'EAC',
-      template: require('./home.html'),
-      controller: 'HomeController',
+      template: require('./home-template.html'),
+      controller: 'ImageController',
       controllerAs: 'hd',
       bindToController: true,
       scope: {
