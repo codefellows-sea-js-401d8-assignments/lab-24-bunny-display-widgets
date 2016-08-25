@@ -21,7 +21,7 @@ demoApp.config(['$routeProvider', function($route) {
       controller: 'ImgController',
       controllerAs: 'img'
     })
-    .when('/fullsize', {
+    .when('/fullsize/:id', {
       template: require('./html/fullsize.html'),
       controller: 'ImgController',
       controllerAs: 'img'

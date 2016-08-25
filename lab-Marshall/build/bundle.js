@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\n__webpack_require__(1);\n__webpack_require__(2);\n\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp', [__webpack_require__(14)]);\n\n__webpack_require__(16)(demoApp);\n__webpack_require__(18)(demoApp);\n\ndemoApp.config(['$routeProvider', function ($route) {\n  $route.when('/', {\n    template: __webpack_require__(31),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).when('/thumbnail', {\n    template: __webpack_require__(32),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).when('/fullsize', {\n    template: __webpack_require__(33),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).otherwise({\n    redirecTo: '/'\n  });\n}]);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/entry.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/entry.js?");
+	eval("'use strict';\n\n__webpack_require__(1);\n__webpack_require__(2);\n\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp', [__webpack_require__(14)]);\n\n__webpack_require__(16)(demoApp);\n__webpack_require__(18)(demoApp);\n\ndemoApp.config(['$routeProvider', function ($route) {\n  $route.when('/', {\n    template: __webpack_require__(31),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).when('/thumbnail', {\n    template: __webpack_require__(32),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).when('/fullsize/:id', {\n    template: __webpack_require__(33),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).otherwise({\n    redirecTo: '/'\n  });\n}]);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/entry.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/entry.js?");
 
 /***/ },
 /* 1 */
@@ -101,7 +101,7 @@
 /* 17 */
 /***/ function(module, exports) {
 
-	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  demoApp.controller('ImgController', ['$routeParams', '$location', function ($routeParams, $location) {\n\n    this.isValidId = function (id) {\n      if (isNaN(id)) return false;\n      if (!isFinite(id)) return false;\n      if (id < 1) return false;\n      if (typeof this.images[id - 1] === 'undefined') return false;\n      return true;\n    };\n\n    var id = Number.parseInt($routeParams.id);\n\n    if (!this.isValidId(id)) {\n      $location.path('/');\n    }\n\n    this.image = this.images[id - 1];\n\n    this.images = [{\n      id: 1,\n      url: 'http://vignette1.wikia.nocookie.net/onepunchman/images/1/18/Slider_dos.png/revision/latest/scale-to-width-down/670?cb=20130220223313',\n      description: 'Saitama 1'\n    }, {\n      id: 2,\n      url: 'http://media.fyre.co/HmWDsHkfTFyShq7GqbE1_b01.png',\n      description: 'Saitama 2'\n    }, {\n      id: 3,\n      url: 'https://de7i3bh7bgh0d.cloudfront.net/2016/07/13/20/36/14/222e1fed-24d4-4ead-bb74-52e888eef12b/viz-blog_saitama.jpg',\n      description: 'Saitama 3'\n    }, {\n      id: 4,\n      url: 'https://images.alphacoders.com/656/656720.jpg',\n      description: 'Saitama 4'\n    }];\n  }]);\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/controllers/images.js\n ** module id = 17\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/controllers/images.js?");
+	eval("'use strict';\n//\n\nmodule.exports = function (demoApp) {\n  demoApp.controller('ImgController', ['$routeParams', '$location', function ($routeParams, $location) {\n    this.images = [{\n      id: 1,\n      url: 'http://vignette1.wikia.nocookie.net/onepunchman/images/1/18/Slider_dos.png/revision/latest/scale-to-width-down/670?cb=20130220223313',\n      description: 'Saitama 1'\n    }, {\n      id: 2,\n      url: 'http://media.fyre.co/HmWDsHkfTFyShq7GqbE1_b01.png',\n      description: 'Saitama 2'\n    }, {\n      id: 3,\n      url: 'https://de7i3bh7bgh0d.cloudfront.net/2016/07/13/20/36/14/222e1fed-24d4-4ead-bb74-52e888eef12b/viz-blog_saitama.jpg',\n      description: 'Saitama 3'\n    }, {\n      id: 4,\n      url: 'https://images.alphacoders.com/656/656720.jpg',\n      description: 'Saitama 4'\n    }];\n\n    this.image = {};\n\n    this.isValidId = function (id) {\n      if (isNaN(id)) return false;\n      if (!isFinite(id)) return false;\n      if (id < 1) return false;\n      if (typeof this.images[id - 1] === 'undefined') return false;\n      return true;\n    };\n\n    if ($routeParams.id) {\n      var id = Number.parseInt($routeParams.id);\n\n      if (!this.isValidId(id)) {\n        $location.path('/');\n      }\n      this.image = this.images[id - 1];\n    }\n  }]);\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/controllers/images.js\n ** module id = 17\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/controllers/images.js?");
 
 /***/ },
 /* 18 */
@@ -119,7 +119,7 @@
 /* 20 */
 /***/ function(module, exports) {
 
-	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  demoApp.controller('FullsizeController', function () {\n    // this.images = this.images || 'No image was found!';\n  });\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/fullsize/fullsize-ctrl.js\n ** module id = 20\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/fullsize/fullsize-ctrl.js?");
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  demoApp.controller('FullsizeController', function () {});\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/fullsize/fullsize-ctrl.js\n ** module id = 20\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/fullsize/fullsize-ctrl.js?");
 
 /***/ },
 /* 21 */
@@ -131,7 +131,7 @@
 /* 22 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <div class=\\\"col-md-6  col-md-offset-3\\\">\\n      <h1>{{description}}</h1>\\n      <img ng-src=\\\"{{url}}\\\" height=\\\"400\\\" width=\\\"400\\\" />\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/fullsize/fullsize.html\n ** module id = 22\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/fullsize/fullsize.html?");
+	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <div class=\\\"col-md-6  col-md-offset-3\\\">\\n      <h1>{{fs.description}}</h1>\\n      <img ng-src=\\\"{{fs.url}}\\\" height=\\\"400\\\" width=\\\"400\\\" />\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/fullsize/fullsize.html\n ** module id = 22\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/fullsize/fullsize.html?");
 
 /***/ },
 /* 23 */
@@ -179,7 +179,7 @@
 /* 30 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <div ng-repeat=\\\"img in img.images\\\" class=\\\"col-xs-2\\\">\\n      <a href=\\\"#/fullsize/{{img.id}}\\\" class=\\\"thumbnail\\\">\\n        <img ng-src=\\\"{{img.url}}\\\" height=\\\"100\\\" width=\\\"100\\\" />\\n      </a>\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/thumbnail/thumbnail.html\n ** module id = 30\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/thumbnail/thumbnail.html?");
+	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <div ng-repeat class=\\\"col-xs-2\\\">\\n      <a href=\\\"#/fullsize/{{fs.id}}\\\" class=\\\"thumbnail\\\">\\n        <img ng-src=\\\"{{tc.url}}\\\" height=\\\"100\\\" width=\\\"100\\\" />\\n      </a>\\n    </div>\\n  </div>\\n</div>\\n\\n\\n<!--\\n<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <div class=\\\"col-md-6  col-md-offset-3\\\">\\n      <h1>{{fs.description}}</h1>\\n      <img ng-src=\\\"{{fs.url}}\\\" height=\\\"400\\\" width=\\\"400\\\" />\\n    </div>\\n  </div>\\n</div> -->\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/thumbnail/thumbnail.html\n ** module id = 30\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/thumbnail/thumbnail.html?");
 
 /***/ },
 /* 31 */
@@ -191,13 +191,13 @@
 /* 32 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div>\\n  <h1>Will the images display? : Thumbnail</h1>\\n  <ul>\\n  \\t<li data-ng-controller=\\\"image in img.images\\\">\\n      <div data-mmm-home-directive data-url=\\\"{{image.url}}\\\"></div>\\n      <div data-cf-thumbnail-directory data-url=\\\"{{image.url}}\\\"></div>\\n\\n    </li>\\n  </ul>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/html/thumbnail.html\n ** module id = 32\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/html/thumbnail.html?");
+	eval("module.exports = \"<div>\\n  <h1>Will the images display? : Thumbnail</h1>\\n  <ul>\\n  \\t<li>\\n      <div data-cf-thumbnail-directory data-url=\\\"{{img.images.url}}\\\"></div>\\n\\n    </li>\\n  </ul>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/html/thumbnail.html\n ** module id = 32\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/html/thumbnail.html?");
 
 /***/ },
 /* 33 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div>\\n  <h1>Will the images display? : Fullsize </h1>\\n  <ul>\\n  \\t<li>\\n      <div data-mmm-fullsize-directive url=\\\"{{img.images[0].url}}\\\" id=\\\"{{img.images[0].id}}\\\" description=\\\"{{img.images[0].description}}\\\"></div>\\n\\n    </li>\\n  </ul>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/html/fullsize.html\n ** module id = 33\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/html/fullsize.html?");
+	eval("module.exports = \"<div>\\n  <h1>Will the images display? : Fullsize </h1>\\n  <ul>\\n  \\t<li>\\n      <div data-mmm-fullsize-directive data-url=\\\"{{img.image.url}}\\\" id=\\\"{{img.image.id}}\\\" description=\\\"{{img.image.description}}\\\"></div>\\n\\n    </li>\\n  </ul>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/html/fullsize.html\n ** module id = 33\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/html/fullsize.html?");
 
 /***/ }
 /******/ ]);
