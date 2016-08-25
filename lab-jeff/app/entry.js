@@ -12,9 +12,7 @@ const angular_route = require('angular-route');
 var lorApp = angular.module('lorApp', [angular_route]);
 
 lorApp.run(['$rootScope', function($rootScope){
-  $rootScope.hobbitData = require('./data/hobbits.js');
-  $rootScope.dwarfData = require('./data/dwarves.js');
-  $rootScope.humanData = require('./data/humans.js');
+  $rootScope.imageGalleriesData = require('./data/imageGalleries.js');
   $rootScope.errorMessage = 'Error trying to access page...';
 }]);
 
@@ -30,7 +28,7 @@ lorApp.config(['$routeProvider', function($route) {
       controller: 'ThumbnailController',
       controllerAs: 'thumbnailCtrl',
     })
-    .when('/fullsize/:id', {
+    .when('/fullsize/:gallery/:id', {
       templateUrl: '/app/view/fullsize/fullsize.html',
       controller: 'FullsizeController',
       controllerAs: 'fullsizeCtrl',

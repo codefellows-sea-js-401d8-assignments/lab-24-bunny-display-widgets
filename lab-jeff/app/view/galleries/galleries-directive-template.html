@@ -7,22 +7,6 @@
 
   </div>
 
-  <div class="row" ng-show="showHobbits">
-    <a ng-repeat="hobbitImage in galleriesCtrl.hobbitImages" href="#/fullsize/{{ hobbitImage.id }}">
-      <img ng-src="{{ hobbitImage.url }}" height="100" width="100"/>
-    </a>
-  </div>
-
-  <div class="row" ng-show="showDwarves">
-    <a ng-repeat="dwarfImage in galleriesCtrl.dwarfImages" href="#/fullsize/{{ dwarfImage.id }}">
-      <img ng-src="{{ dwarfImage.url }}" height="100" width="100"/>
-    </a>
-  </div>
-
-  <div class="row" ng-show="showHumans">
-    <a ng-repeat="humanImage in galleriesCtrl.humanImages" href="#/fullsize/{{ humanImage.id }}">
-      <img ng-src="{{ humanImage.url }}" height="100" width="100"/>
-    </a>
-  </div>
+  <div data-jg-thumbnail-directive></div>
 
 </div>

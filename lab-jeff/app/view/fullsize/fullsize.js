@@ -7,7 +7,7 @@ const lorApp = angular.module('lorApp');
 lorApp.controller('FullsizeController', ['$rootScope', '$routeParams', '$location', FullsizeController]);
 
 function FullsizeController($rootScope, $routeParams, $location){
-  this.hobbitImages = $rootScope.hobbitData;
+  this.imageGalleries = $rootScope.imageGalleriesData;
 
   this.isValidId = function(id){
     if (id < 1 || id > 5) return false;
@@ -16,11 +16,21 @@ function FullsizeController($rootScope, $routeParams, $location){
   };
 
   let id = Number.parseInt($routeParams.id);
+  let gallery = $routeParams.gallery;
 
   if(!this.isValidId(id)) {
     $location.path('/error');
   }
 
-  this.hobbitImage = this.hobbitImages[id - 1];
+  if (gallery === 'hobbits') {
+    this.currentImage = this.hobbitImages[id -1];
+  }
 
+  if (gallery === 'dwarves') {
+    this.currentImage = this.dwarfImages[id - 1];
+  }
+
+  if (gallery === 'humans') {
+    this.currentImage = this.humanImages[id -1];
+  }
 }
