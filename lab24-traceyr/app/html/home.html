@@ -4,7 +4,9 @@
       <ul>
         <li ng-repeat="image in hc.images">
           <div text-directive title="{{image.title}}" url="image.url"></div>
+            <div thumbnail-directive image="image.url"></div>
         </li>
+
       </ul>
     </div>
   </div>
