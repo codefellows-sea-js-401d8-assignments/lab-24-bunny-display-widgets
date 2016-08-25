@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = function(demoApp){
-  demoApp.controller('ThumbnailController', function(){
-    this.images = this.images || 'No thumbnail found!';
-  });
+  require('./thumbnail-ctrl')(demoApp);
+  require('./thumbnail-directive')(demoApp);
 };

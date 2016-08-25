@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\n// webpack assets\n\n__webpack_require__(1);\n__webpack_require__(2);\n\n// npm modules\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp', [__webpack_require__(14)]);\n\n__webpack_require__(16)(demoApp);\n__webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./components\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))(demoApp);\n\ndemoApp.config(['$routeProvider', function ($route) {\n  $route.when('/', {\n    template: __webpack_require__(18),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  });\n}]);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/entry.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/entry.js?");
+	eval("'use strict';\n\n__webpack_require__(1);\n__webpack_require__(2);\n\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp', [__webpack_require__(14)]);\n\n__webpack_require__(16)(demoApp);\n__webpack_require__(18)(demoApp);\n\ndemoApp.config(['$routeProvider', function ($route) {\n  $route.when('/', {\n    template: __webpack_require__(31),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).when('/thumbnail', {\n    template: __webpack_require__(32),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).when('/fullsize', {\n    template: __webpack_require__(33),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).otherwise({\n    redirecTo: '/'\n  });\n}]);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/entry.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/entry.js?");
 
 /***/ },
 /* 1 */
@@ -101,13 +101,103 @@
 /* 17 */
 /***/ function(module, exports) {
 
-	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  demoApp.controller('ImgController', function () {\n    this.images = [{\n      id: 1,\n      url: 'http://vignette1.wikia.nocookie.net/onepunchman/images/1/18/Slider_dos.png/revision/latest/scale-to-width-down/670?cb=20130220223313',\n      description: 'Saitama 1'\n    }, {\n      id: 2,\n      url: 'http://media.fyre.co/HmWDsHkfTFyShq7GqbE1_b01.png',\n      description: 'Saitama 2'\n    }, {\n      id: 3,\n      url: 'https://de7i3bh7bgh0d.cloudfront.net/2016/07/13/20/36/14/222e1fed-24d4-4ead-bb74-52e888eef12b/viz-blog_saitama.jpg',\n      description: 'Saitama 3'\n    }, {\n      id: 4,\n      url: 'https://images.alphacoders.com/656/656720.jpg',\n      description: 'Saitama 4'\n    }];\n  });\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/controllers/images.js\n ** module id = 17\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/controllers/images.js?");
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  demoApp.controller('ImgController', ['$routeParams', '$location', function ($routeParams, $location) {\n\n    this.isValidId = function (id) {\n      if (isNaN(id)) return false;\n      if (!isFinite(id)) return false;\n      if (id < 1) return false;\n      if (typeof this.images[id - 1] === 'undefined') return false;\n      return true;\n    };\n\n    var id = Number.parseInt($routeParams.id);\n\n    if (!this.isValidId(id)) {\n      $location.path('/');\n    }\n\n    this.image = this.images[id - 1];\n\n    this.images = [{\n      id: 1,\n      url: 'http://vignette1.wikia.nocookie.net/onepunchman/images/1/18/Slider_dos.png/revision/latest/scale-to-width-down/670?cb=20130220223313',\n      description: 'Saitama 1'\n    }, {\n      id: 2,\n      url: 'http://media.fyre.co/HmWDsHkfTFyShq7GqbE1_b01.png',\n      description: 'Saitama 2'\n    }, {\n      id: 3,\n      url: 'https://de7i3bh7bgh0d.cloudfront.net/2016/07/13/20/36/14/222e1fed-24d4-4ead-bb74-52e888eef12b/viz-blog_saitama.jpg',\n      description: 'Saitama 3'\n    }, {\n      id: 4,\n      url: 'https://images.alphacoders.com/656/656720.jpg',\n      description: 'Saitama 4'\n    }];\n  }]);\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/controllers/images.js\n ** module id = 17\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/controllers/images.js?");
 
 /***/ },
 /* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  __webpack_require__(19)(demoApp);\n  __webpack_require__(23)(demoApp);\n  __webpack_require__(27)(demoApp);\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/index.js\n ** module id = 18\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/index.js?");
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  __webpack_require__(20)(demoApp);\n  __webpack_require__(21)(demoApp);\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/fullsize/index.js\n ** module id = 19\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/fullsize/index.js?");
+
+/***/ },
+/* 20 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div>\\n  <h1>Will the images display?</h1>\\n  <ul>\\n  \\t<li data-ng-repeat=\\\"post in dc.posts\\\">\\n      <div data-cf-dummy-directive data-ng-if=\\\"post.mutable\\\" data-title=\\\"{{post.title}}\\\" data-contents=\\\"post.contents\\\"></div>\\n      <div data-cf-another-directive data-ng-if=\\\"!post.mutable\\\" data-title=\\\"{{post.title}}\\\" data-contents=\\\"post.contents\\\"></div>\\n\\n    </li>\\n  </ul>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/html/home.html\n ** module id = 18\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/html/home.html?");
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  demoApp.controller('FullsizeController', function () {\n    // this.images = this.images || 'No image was found!';\n  });\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/fullsize/fullsize-ctrl.js\n ** module id = 20\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/fullsize/fullsize-ctrl.js?");
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  demoApp.directive('mmmFullsizeDirective', function () {\n    return {\n      template: __webpack_require__(22),\n      controller: 'ImgController',\n      controllerAs: 'fs',\n      bindToController: true,\n      scope: {\n        url: '@',\n        id: '@',\n        description: '@'\n      }\n    };\n  });\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/fullsize/fullsize-directive.js\n ** module id = 21\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/fullsize/fullsize-directive.js?");
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <div class=\\\"col-md-6  col-md-offset-3\\\">\\n      <h1>{{description}}</h1>\\n      <img ng-src=\\\"{{url}}\\\" height=\\\"400\\\" width=\\\"400\\\" />\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/fullsize/fullsize.html\n ** module id = 22\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/fullsize/fullsize.html?");
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  __webpack_require__(24)(demoApp);\n  __webpack_require__(25)(demoApp);\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/home/index.js\n ** module id = 23\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/home/index.js?");
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  demoApp.controller('HomeController', function () {\n    // this.images = this.images || 'No thumbnail found!';\n  });\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/home/home-ctrl.js\n ** module id = 24\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/home/home-ctrl.js?");
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("'use strict';\n' use strict';\n\nmodule.exports = function (demoApp) {\n  demoApp.directive('mmmHomeDirective', function () {\n    return {\n      template: __webpack_require__(26),\n      controller: 'HomeController',\n      controllerAs: 'hc',\n      bindToController: true,\n      scope: {\n        id: '@',\n        url: '@',\n        description: '@'\n      }\n    };\n  });\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/home/home-directive.js\n ** module id = 25\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/home/home-directive.js?");
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <!--bootstrap tip - to center set an offset equal to half of the remaining size of the row-->\\n    <div class=\\\"list-group col-md-6  col-md-offset-3\\\">\\n      <a ng-repeat=\\\"image in hc.images\\\" href=\\\"#/fullsize/{{img.id}}\\\" class=\\\"list-group-item\\\">{{img.description}}</a>\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/home/home.html\n ** module id = 26\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/home/home.html?");
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  __webpack_require__(28)(demoApp);\n  __webpack_require__(29)(demoApp);\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/thumbnail/index.js\n ** module id = 27\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/thumbnail/index.js?");
+
+/***/ },
+/* 28 */
+/***/ function(module, exports) {
+
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  demoApp.controller('ThumbnailController', function () {\n    // this.images = this.images || 'No thumbnail found!';\n  });\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/thumbnail/thumbnail-ctrl.js\n ** module id = 28\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/thumbnail/thumbnail-ctrl.js?");
+
+/***/ },
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("'use strict';\n\nmodule.exports = function (demoApp) {\n  demoApp.directive('mmmThumbnailDirective', function () {\n    return {\n      template: __webpack_require__(30),\n      controller: 'ThumbnailController',\n      controllerAs: 'tc',\n      bindToController: true,\n      scope: {\n        description: '@',\n        id: '@',\n        url: '@'\n      }\n    };\n  });\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/thumbnail/thumbnail-directive.js\n ** module id = 29\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/thumbnail/thumbnail-directive.js?");
+
+/***/ },
+/* 30 */
+/***/ function(module, exports) {
+
+	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <div ng-repeat=\\\"img in img.images\\\" class=\\\"col-xs-2\\\">\\n      <a href=\\\"#/fullsize/{{img.id}}\\\" class=\\\"thumbnail\\\">\\n        <img ng-src=\\\"{{img.url}}\\\" height=\\\"100\\\" width=\\\"100\\\" />\\n      </a>\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/thumbnail/thumbnail.html\n ** module id = 30\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/thumbnail/thumbnail.html?");
+
+/***/ },
+/* 31 */
+/***/ function(module, exports) {
+
+	eval("module.exports = \"<div>\\n  <h1>Will the images display? : Home </h1>\\n  <ul>\\n  \\t<li data-ng-controller=\\\"image in img.images\\\">\\n      <div data-mmm-home-directive data-url=\\\"{{image.url}}\\\"></div>\\n      <div data-cf-fullsize-directory></div>\\n\\n    </li>\\n  </ul>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/html/home.html\n ** module id = 31\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/html/home.html?");
+
+/***/ },
+/* 32 */
+/***/ function(module, exports) {
+
+	eval("module.exports = \"<div>\\n  <h1>Will the images display? : Thumbnail</h1>\\n  <ul>\\n  \\t<li data-ng-controller=\\\"image in img.images\\\">\\n      <div data-mmm-home-directive data-url=\\\"{{image.url}}\\\"></div>\\n      <div data-cf-thumbnail-directory data-url=\\\"{{image.url}}\\\"></div>\\n\\n    </li>\\n  </ul>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/html/thumbnail.html\n ** module id = 32\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/html/thumbnail.html?");
+
+/***/ },
+/* 33 */
+/***/ function(module, exports) {
+
+	eval("module.exports = \"<div>\\n  <h1>Will the images display? : Fullsize </h1>\\n  <ul>\\n  \\t<li>\\n      <div data-mmm-fullsize-directive url=\\\"{{img.images[0].url}}\\\" id=\\\"{{img.images[0].id}}\\\" description=\\\"{{img.images[0].description}}\\\"></div>\\n\\n    </li>\\n  </ul>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/html/fullsize.html\n ** module id = 33\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/html/fullsize.html?");
 
 /***/ }
 /******/ ]);

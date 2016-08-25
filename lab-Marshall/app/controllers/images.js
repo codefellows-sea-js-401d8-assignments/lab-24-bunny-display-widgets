@@ -1,7 +1,24 @@
 'use strict';
 
 module.exports = function(demoApp){
-  demoApp.controller('ImgController', function(){
+  demoApp.controller('ImgController', ['$routeParams', '$location', function($routeParams, $location){
+
+    this.isValidId = function(id){
+      if (isNaN(id)) return false;
+      if (!isFinite(id)) return false;
+      if (id < 1) return false;
+      if (typeof(this.images[id - 1]) === 'undefined') return false;
+      return true;
+    };
+
+    let id = Number.parseInt($routeParams.id);
+
+    if (!this.isValidId(id)){
+      $location.path('/');
+    }
+
+    this.image = this.images[id - 1];
+
     this.images = [{
       id: 1,
       url: 'http://vignette1.wikia.nocookie.net/onepunchman/images/1/18/Slider_dos.png/revision/latest/scale-to-width-down/670?cb=20130220223313',
@@ -18,6 +35,6 @@ module.exports = function(demoApp){
       id: 4,
       url: 'https://images.alphacoders.com/656/656720.jpg',
       description: 'Saitama 4'
-    }]
-  });
+    }];
+  }]);
 };
