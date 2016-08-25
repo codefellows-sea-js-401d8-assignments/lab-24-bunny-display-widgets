@@ -1,9 +1,9 @@
 'use strict';
 
 const angular = require('angular');
-const hobbitApp = angular.module('hobbitApp');
+const lorApp = angular.module('lorApp');
 
-hobbitApp.directive('jgFullsizeDirective', function(){
+lorApp.directive('jgFullsizeDirective', function(){
   return {
     restrict: 'EAC',
     scope: {

@@ -2,10 +2,10 @@
 require('./_home.scss');
 
 const angular = require('angular');
-const hobbitApp = angular.module('hobbitApp');
+const lorApp = angular.module('lorApp');
 
-hobbitApp.controller('HomeController', ['$rootScope', HomeController]);
+lorApp.controller('HomeController', ['$rootScope', HomeController]);
 
 function HomeController($rootScope){
-  this.images = $rootScope.imageData;
+  this.hobbitImages = $rootScope.hobbitData;
 }

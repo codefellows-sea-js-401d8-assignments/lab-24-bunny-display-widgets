@@ -3,7 +3,7 @@
 const angular = require('angular');
 const lorApp = angular.module('lorApp');
 
-lorApp.directive('jgThumbnailDirective', function(){
+lorApp.directive('jgGalleriesDirective', function(){
   return {
     restrict: 'EAC',
     scope: {
@@ -12,8 +12,8 @@ lorApp.directive('jgThumbnailDirective', function(){
       url: '@',
     },
     bindToController: true,
-    controller: 'ThumbnailController',
-    controllerAs: 'thumbnailCtrl',
-    template: require('./thumbnail-directive-template.html'),
+    controller: 'GalleriesController',
+    controllerAs: 'galleriesCtrl',
+    template: require('./galleries-directive-template.html'),
   };
 });

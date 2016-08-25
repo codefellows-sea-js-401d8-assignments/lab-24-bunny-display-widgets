@@ -2,9 +2,9 @@
 require('./_error.scss');
 
 const angular = require('angular');
-const hobbitApp = angular.module('hobbitApp');
+const lorApp = angular.module('lorApp');
 
-hobbitApp.controller('ErrorController', ['$rootScope', ErrorController]);
+lorApp.controller('ErrorController', ['$rootScope', ErrorController]);
 
 function ErrorController($rootScope){
   this.errorMessage = $rootScope.errorMessage;

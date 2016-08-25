@@ -1,10 +1,10 @@
 'use strict';
 
 const angular = require('angular');
-const hobbitApp = angular.module('hobbitApp');
+const lorApp = angular.module('lorApp');
 
-hobbitApp.controller('ThumbnailController', ['$rootScope', ThumbnailController]);
+lorApp.controller('ThumbnailController', ['$rootScope', ThumbnailController]);
 
 function ThumbnailController($rootScope) {
-  this.images = $rootScope.imageData;
+  this.hobbitImages = $rootScope.hobbitData;
 }

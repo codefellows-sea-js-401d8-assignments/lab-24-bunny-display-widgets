@@ -2,12 +2,12 @@
 require('./fullsize.scss');
 
 const angular = require('angular');
-const hobbitApp = angular.module('hobbitApp');
+const lorApp = angular.module('lorApp');
 
-hobbitApp.controller('FullsizeController', ['$rootScope', '$routeParams', '$location', FullsizeController]);
+lorApp.controller('FullsizeController', ['$rootScope', '$routeParams', '$location', FullsizeController]);
 
 function FullsizeController($rootScope, $routeParams, $location){
-  this.images = $rootScope.imageData;
+  this.hobbitImages = $rootScope.hobbitData;
 
   this.isValidId = function(id){
     if (id < 1 || id > 5) return false;
@@ -21,6 +21,6 @@ function FullsizeController($rootScope, $routeParams, $location){
     $location.path('/error');
   }
 
-  this.image = this.images[id - 1];
+  this.hobbitImage = this.hobbitImages[id - 1];
 
 }

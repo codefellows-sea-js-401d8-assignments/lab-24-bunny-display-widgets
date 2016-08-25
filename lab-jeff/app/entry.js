@@ -9,14 +9,16 @@ const angular = require('angular');
 const angular_route = require('angular-route');
 
 // angular modules
-var app = angular.module('hobbitApp', [angular_route]);
+var lorApp = angular.module('lorApp', [angular_route]);
 
-app.run(['$rootScope', function($rootScope){
-  $rootScope.imageData = require('./data/images.js');
+lorApp.run(['$rootScope', function($rootScope){
+  $rootScope.hobbitData = require('./data/hobbits.js');
+  $rootScope.dwarfData = require('./data/dwarves.js');
+  $rootScope.humanData = require('./data/humans.js');
   $rootScope.errorMessage = 'Error trying to access page...';
 }]);
 
-app.config(['$routeProvider', function($route) {
+lorApp.config(['$routeProvider', function($route) {
   $route
     .when('/', {
       templateUrl: '/app/view/home/home.html',
@@ -36,6 +38,9 @@ app.config(['$routeProvider', function($route) {
     .when('/all-views', {
       templateUrl:'/app/view/all-views/all-views.html',
     })
+    .when('/galleries', {
+      templateUrl: '/app/view/galleries/galleries.html',
+    })
     .when('/error', {
       templateUrl: '/app/view/error/error.html',
       controller: 'ErrorController',
@@ -50,6 +55,7 @@ app.config(['$routeProvider', function($route) {
 require('./view/home/home.js');
 require('./view/thumbnail/thumbnail.js');
 require('./view/fullsize/fullsize.js');
+require('./view/galleries/galleries.js');
 require('./view/error/error.js');
 
 
@@ -57,3 +63,4 @@ require('./view/error/error.js');
 require('./view/thumbnail/thumbnail-directive.js');
 require('./view/home/home-directive.js');
 require('./view/fullsize/fullsize-directive.js');
+require('./view/galleries/galleries-directive.js');

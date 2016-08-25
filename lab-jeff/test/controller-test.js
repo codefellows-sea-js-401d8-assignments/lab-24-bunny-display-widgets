@@ -4,7 +4,7 @@
 
 describe('tests controllers', function(){
   beforeEach(() => {
-    angular.mock.module('hobbitApp');
+    angular.mock.module('lorApp');
     angular.mock.inject(($controller) => {
       this.HomeController = new $controller('HomeController');
       this.FullsizeController = new $controller('FullsizeController');
@@ -13,19 +13,19 @@ describe('tests controllers', function(){
     });
   });
 
-  it('HomeController should create an array of images', () => {
-    expect(this.HomeController.images.length > 0).toEqual(true);
-    expect(this.HomeController.images.length).toEqual(5);
+  it('HomeController should create an array of hobbitImages', () => {
+    expect(this.HomeController.hobbitImages.length > 0).toEqual(true);
+    expect(this.HomeController.hobbitImages.length).toEqual(5);
   });
 
-  it('ThumbnailController should create an array of images', () => {
-    expect(this.ThumbnailController.images.length > 0).toEqual(true);
-    expect(this.ThumbnailController.images.length).toEqual(5);
+  it('ThumbnailController should create an array of hobbithobbitImages', () => {
+    expect(this.ThumbnailController.hobbitImages.length > 0).toEqual(true);
+    expect(this.ThumbnailController.hobbitImages.length).toEqual(5);
   });
 
-  it('FullsizeController should create an array of images', () => {
-    expect(this.FullsizeController.images.length > 0).toEqual(true);
-    expect(this.FullsizeController.images.length).toEqual(5);
+  it('FullsizeController should create an array of hobbitImages', () => {
+    expect(this.FullsizeController.hobbitImages.length > 0).toEqual(true);
+    expect(this.FullsizeController.hobbitImages.length).toEqual(5);
   });
 
   it('FullsizeController should test for a valid ID', () => {
