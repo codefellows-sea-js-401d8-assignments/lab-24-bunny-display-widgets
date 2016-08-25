@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(app) {
-  app.controller('ImageController', function() {
+  app.controller('ImageController', ['$routeParams', '$location', function($routeParams, $location) {
     this.images = [{
       id: 1,
       url: 'https://media.giphy.com/media/14kdiJUblbWBXy/giphy.gif',
@@ -26,5 +26,20 @@ module.exports = function(app) {
       description: 'Beep beep.',
       title: 'Pagers are cool too'
     }];
-  });
+
+    this.isValidId = function(id){
+      if (isNaN(id)) return false;
+      if (!isFinite(id)) return false;
+      if (id < 1) return false;
+      if (typeof(this.images[id - 1]) === 'undefined') return false;
+      return true;
+    };
+
+    let id = Number.parseInt($routeParams.id);
+
+    if (!this.isValidId(id)){
+      $location.path('/');
+    }
+    this.image = this.images[id - 1];
+  }]);
 };
