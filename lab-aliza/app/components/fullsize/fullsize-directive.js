@@ -9,9 +9,9 @@ module.exports = function(app) {
       controllerAs: 'fsd',
       bindToController: true,
       scope: {
-        title: '=',
-        description: '=',
-        url: '='
+        title: '@',
+        description: '@',
+        url: '@'
       }
     };
   });
