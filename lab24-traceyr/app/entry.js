@@ -31,6 +31,11 @@ app.config(['$routeProvider', function($route) {
       controller: 'ImageController',
       controllerAs: 'hc'
     })
+    .when('/fullsize', {
+      template: require('./html/fullsize.html'),
+      controller: 'ImageController',
+      controllerAs: 'hc'
+    })
     .otherwise({
       redirectTo: '/'
     });
