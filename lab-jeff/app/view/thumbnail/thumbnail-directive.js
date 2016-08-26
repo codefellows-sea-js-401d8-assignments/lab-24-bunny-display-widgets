@@ -7,9 +7,9 @@ lorApp.directive('jgThumbnailDirective', function(){
   return {
     restrict: 'EAC',
     scope: {
-      description: '@',
-      title: '@',
       url: '@',
+      name: '@',
+      id: '@',
     },
     bindToController: true,
     controller: 'ThumbnailController',

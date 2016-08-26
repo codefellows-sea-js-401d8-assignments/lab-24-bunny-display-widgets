@@ -23,10 +23,10 @@ function FullsizeController($rootScope, $routeParams, $location){
   }
 
   if (gallery === 'hobbits') {
-    this.currentImage = this.hobbitImages[id -1];
+    this.currentImage = this.hobbitImages[id - 1];
   }
 
-  if (gallery === 'dwarves') {
+  if(gallery === 'dwarves') {
     this.currentImage = this.dwarfImages[id - 1];
   }
 

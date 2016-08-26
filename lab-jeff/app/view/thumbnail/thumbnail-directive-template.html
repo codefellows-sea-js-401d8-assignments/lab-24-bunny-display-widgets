@@ -1,17 +1,9 @@
-<div class="row">
-  <a ng-repeat="image in thumbnailCtrl.imageGalleries[0].images" href="#/fullsize/hobbits/{{ image.id }}">
-    <img src="{{ image.url }}" height="100px" width="100px"/>
-  </a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-1" ng-repeat="image in thumbnailCtrl.currentGallery.images">
+      <img src="{{ image.url }}" height="100px" width="100px"/>
+    </div>
+  </div>
 </div>
 
-<div class="row">
-  <a ng-repeat="image in thumbnailCtrl.imageGalleries[1].images" href="#/fullsize/hobbits/{{ image.id }}">
-    <img src="{{ image.url }}" height="100px" width="100px"/>
-  </a>
-</div>
-
-<div class="row">
-  <a ng-repeat="image in thumbnailCtrl.imageGalleries[2].images" href="#/fullsize/hobbits/{{ image.id }}">
-    <img src="{{ image.url }}" height="100px" width="100px"/>
-  </a>
-</div>
+<!-- href="#/fullsize/{{ thumbnailCtrl.currentGallery.name }}/{{ thumbnailCtrl.image.id }}" -->
