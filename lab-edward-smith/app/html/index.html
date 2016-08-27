@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html data-ng-app="bunnyApp">
+<html ng-app="bunnyApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bunny App</title>
     <script src="bundle.js"></script>
     <link rel="stylesheet" href="bundle.css">
   </head>
   <body>
-    <main data-ng-view></main>
+    <header>
+      <nav class="navbar navbar-inverse">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#/">Bunny App</a>
+          </div>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/"><i class="fa fa-home>"></i>Home</a></li>
+            <li><a href="#/thumbnail"><i class="fa fa-picture-o>"></i>Thumbnail</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main ng-view>
+    </main>
   </body>
 </html>

@@ -1,17 +1,14 @@
 'use strict';
 
-// npm modules
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractText = require('extract-text-webpack-plugin');
 
-// module constants
 const production = process.env.NODE_ENV === 'production';
 const apiURL = process.env.API_URL || 'http://localhost:3000';
 
-// webpack config
-var plugins = [
+let plugins = [
   new ExtractText('bundle.css'),
   new webpack.DefinePlugin({
     __API_URL__: JSON.stringify(apiURL),
@@ -30,7 +27,7 @@ if (production){
   ]);
 }
 
-module.exports = {
+module.exports = exports = {
   entry: `${__dirname}/app/entry.js`,
   debug: !production,
   devtool: production ? false : 'eval',
@@ -40,12 +37,12 @@ module.exports = {
     filename: 'bundle.js',
   },
   sassLoader: {
-    includePaths: [`${__dirname}/app/scss/lib`],
+    includePaths: [`${__dirname}/app/scss.lib`],
   },
-  postcss: function(){
+  postcss: function() {
     return [autoprefixer];
   },
-  module:{
+  module: {
     loaders: [
       {
         test: /\.scss$/,
@@ -69,7 +66,7 @@ module.exports = {
       },
       {
         test: /\.svg.*/,
-        loader: 'url?limit=10000&mimetype=image/svg+xml&name=fonts/[name].[ext]',
+        loader: 'url?limit=10000&mimetype=image/svg+xml&name=fonts/[name].[ext]'
       },
       {
         test: /\.woff.*/,
