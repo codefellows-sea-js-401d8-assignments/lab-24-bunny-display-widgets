@@ -1,11 +1,9 @@
 <div class="container">
   <div class="row">
-    <button class="button btn-default" type="button" name="Hobbits"> Hobbits </button>
-    <button class="button btn-default" type="button" name="Dwarves"> Dwarves </button>
-    <button class="button btn-default" type="button" name="Humans"> Humans </button>
-
+    <a data-ng-repeat="gallery in galleriesCtrl.imageGalleries" href="#/galleries/{{ gallery.galleryName}}">
+      <button class="button btn-default" type="button" name="{{ gallery.galleryName }}">
+        {{ gallery.galleryName }}
+      </button>
+    </a>
   </div>
-
-  <div data-jg-thumbnail-directive></div>
-
 </div>

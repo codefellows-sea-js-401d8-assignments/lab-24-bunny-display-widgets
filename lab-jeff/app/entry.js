@@ -23,15 +23,20 @@ lorApp.config(['$routeProvider', function($route) {
       controller: 'HomeController',
       controllerAs: 'homeCtrl',
     })
-    .when('/gallery/:galleryName/fullSize/:imageId', {
-      templateUrl: '/app/view/fullsize/fullsize.html',
-      controller: 'FullsizeController',
-      controllerAs: 'fullsizeCtrl',
+    .when('/galleries', {
+      templateUrl: '/app/view/galleries/galleries.html',
+      controller: 'GalleriesController',
+      controllerAs: 'galleriesCtrl',
     })
-    .when('/gallery/:galleryName', {
+    .when('/galleries/:galleryName', {
       templateUrl: '/app/view/thumbnail/thumbnail.html',
       controller: 'ThumbnailController',
       controllerAs: 'thumbnailCtrl',
+    })
+    .when('/galleries/:galleryName/fullsize/:imageId', {
+      templateUrl: '/app/view/fullsize/fullsize.html',
+      controller: 'FullsizeController',
+      controllerAs: 'fullsizeCtrl',
     })
     .when('/error', {
       templateUrl: '/app/view/error/error.html',

@@ -6,5 +6,6 @@ const lorApp = angular.module('lorApp');
 lorApp.controller('GalleriesController', ['$rootScope', GalleriesController]);
 
 function GalleriesController($rootScope) {
-  this.imageGalleries = $rootScope.galleriesData;
+  this.imageGalleries = $rootScope.imageGalleriesData;
+  console.log(this.imageGalleries);
 }

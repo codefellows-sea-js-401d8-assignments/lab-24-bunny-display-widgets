@@ -1,9 +1,9 @@
 ![Triforce](./resources/triforce2.gif)
 
-#Hobbit App#
+#LoR Gallery App#
 
 ###Summary###
-Displays images of Hobbits with directives.
+Displays images of LoR characters with directives.
 
 ###Instructions###
 From the root directory of 'lab-jeff' run the following command in your terminal to install dependencies:

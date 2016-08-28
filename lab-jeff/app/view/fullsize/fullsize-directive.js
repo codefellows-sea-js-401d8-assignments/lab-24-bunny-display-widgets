@@ -9,6 +9,7 @@ lorApp.directive('jgFullsizeDirective', function(){
     scope: {
       description: '@',
       url: '@',
+      gallery: '@',
     },
     bindToController: true,
     controller: 'FullsizeController',

@@ -1,9 +1,14 @@
 <div class="container">
   <div class="row">
+    <a href="#/galleries">
+      <button type="button" name="goBack"> Go Back </button>
+    </a>
+  </div>
+  <div class="row">
     <div class="col-md-1" ng-repeat="image in thumbnailCtrl.currentGallery.images">
-      <img src="{{ image.url }}" height="100px" width="100px"/>
+      <a href="#/galleries/{{thumbnailCtrl.currentGallery.galleryName}}/fullsize/{{ image.id }}">
+        <img src="{{ image.url }}" height="100px" width="100px"/>
+      </a>
     </div>
   </div>
 </div>
-
-<!-- href="#/fullsize/{{ thumbnailCtrl.currentGallery.name }}/{{ thumbnailCtrl.image.id }}" -->

@@ -2,14 +2,14 @@
 
 module.exports = [{
   galleryId: 0,
-  name: 'hobbits',
+  galleryName: 'hobbits',
   images: require('./hobbits.js'),
 }, {
   galleryId: 1,
-  name: 'dwarves',
+  galleryName: 'dwarves',
   images: require('./dwarves.js'),
 }, {
   galleryId: 2,
-  name: 'humans',
+  galleryName: 'humans',
   images: require('./humans.js'),
 }];

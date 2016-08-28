@@ -1,4 +1,9 @@
 <div class="container">
-  <h1>{{ fullsizeCtrl.currentImage.description }}</h1>
-  <img ng-src="{{ fullsizeCtrl.currentImage.url }}" height="400" width="400"/>
+  <div class="row">
+    <h1>{{ fullsizeCtrl.currentImage.description }}</h1>
+    <a href="#/galleries/{{ fullsizeCtrl.gallery }}">
+      <button type="button" name="goBack"> Go Back </button>
+    </a>
+  </div>
+  <img data-ng-src="{{ fullsizeCtrl.currentImage.url }}" height="400" width="400"/>
 </div>

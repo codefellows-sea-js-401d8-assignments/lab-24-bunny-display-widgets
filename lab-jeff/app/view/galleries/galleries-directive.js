@@ -7,9 +7,7 @@ lorApp.directive('jgGalleriesDirective', function(){
   return {
     restrict: 'EAC',
     scope: {
-      description: '@',
-      title: '@',
-      url: '@',
+      galleryName: '@',
     },
     bindToController: true,
     controller: 'GalleriesController',

@@ -1,5 +1,5 @@
 'use strict';
-require('./fullsize.scss');
+require('./_fullsize.scss');
 
 const angular = require('angular');
 const lorApp = angular.module('lorApp');
@@ -15,22 +15,23 @@ function FullsizeController($rootScope, $routeParams, $location){
     return true;
   };
 
-  let id = Number.parseInt($routeParams.id);
-  let gallery = $routeParams.gallery;
+  let id = Number.parseInt($routeParams.imageId);
+  this.gallery = $routeParams.galleryName;
+  console.log(this.gallery);
 
   if(!this.isValidId(id)) {
     $location.path('/error');
   }
 
-  if (gallery === 'hobbits') {
-    this.currentImage = this.hobbitImages[id - 1];
+  if (this.gallery === 'hobbits') {
+    this.currentImage = this.imageGalleries[0].images[id - 1];
   }
 
-  if(gallery === 'dwarves') {
-    this.currentImage = this.dwarfImages[id - 1];
+  if(this.gallery === 'dwarves') {
+    this.currentImage = this.imageGalleries[1].images[id - 1];
   }
 
-  if (gallery === 'humans') {
-    this.currentImage = this.humanImages[id -1];
+  if (this.gallery === 'humans') {
+    this.currentImage = this.imageGalleries[2].images[id - 1];
   }
 }
