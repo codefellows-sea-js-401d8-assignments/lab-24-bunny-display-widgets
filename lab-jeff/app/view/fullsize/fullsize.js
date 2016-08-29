@@ -17,7 +17,6 @@ function FullsizeController($rootScope, $routeParams, $location){
 
   let id = Number.parseInt($routeParams.imageId);
   this.gallery = $routeParams.galleryName;
-  console.log(this.gallery);
 
   if(!this.isValidId(id)) {
     $location.path('/error');
