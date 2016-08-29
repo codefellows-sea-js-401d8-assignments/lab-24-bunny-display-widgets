@@ -1,0 +1,10 @@
+<div class="container">
+  <ul>
+    <li ng-repeat="bunny in bc.images">
+      <!-- <div data-es-text-directive data-description="{{bunny.description}}" data-url="{{bunny.url}}"></div> -->
+      <div data-es-list-directive data-description="{{bunny.description}}" data-url="{{bunny.url}}"></div>
+    </li>
+  </ul>
+  <div class="col-xs-3" ng-repeat="bunny in bc.images" data-es-thumbnail-directive data-url="{{bunny.url}}" data-description="{{bunny.description}}"></div>
+  <div ng-repeat="bunny in bc.images" data-es-fullsize-directive data-url="{{bunny.url}}"></div>
+</div>
