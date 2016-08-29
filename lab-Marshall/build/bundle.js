@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\n__webpack_require__(1);\n__webpack_require__(2);\n\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp', [__webpack_require__(14)]);\n\n__webpack_require__(16)(demoApp);\n__webpack_require__(18)(demoApp);\n\ndemoApp.config(['$routeProvider', function ($route) {\n  $route.when('/', {\n    template: __webpack_require__(31),\n    controller: 'ImgController',\n    controllerAs: 'hd'\n  }).when('/thumbnail', {\n    template: __webpack_require__(32),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).when('/fullsize/:id', {\n    template: __webpack_require__(33),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).otherwise({\n    redirecTo: '/'\n  });\n}]);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/entry.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/entry.js?");
+	eval("'use strict';\n\n__webpack_require__(1);\n__webpack_require__(2);\n\nvar angular = __webpack_require__(12);\nvar demoApp = angular.module('demoApp', [__webpack_require__(14)]);\n\n__webpack_require__(16)(demoApp);\n__webpack_require__(18)(demoApp);\n\ndemoApp.config(['$routeProvider', function ($route) {\n  $route.when('/', {\n    template: __webpack_require__(31),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).when('/thumbnail', {\n    template: __webpack_require__(32),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).when('/fullsize/:id', {\n    template: __webpack_require__(33),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).when('/fulldisplay', {\n    template: __webpack_require__(34),\n    controller: 'ImgController',\n    controllerAs: 'img'\n  }).otherwise({\n    redirecTo: '/'\n  });\n}]);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/entry.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/entry.js?");
 
 /***/ },
 /* 1 */
@@ -179,7 +179,7 @@
 /* 30 */
 /***/ function(module, exports) {
 
-	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <div ng-repeat=\\\"image in tc.images\\\" class=\\\"col-xs-2\\\">\\n      <a href=\\\"#/fullsize/{{image.id}}\\\" class=\\\"thumbnail\\\">\\n        <img ng-src=\\\"{{image.url}}\\\" height=\\\"100\\\" width=\\\"100\\\" />\\n      </a>\\n    </div>\\n  </div>\\n</div>\\n\\n\\n<!--\\n<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <div class=\\\"col-md-6  col-md-offset-3\\\">\\n      <h1>{{fs.description}}</h1>\\n      <img ng-src=\\\"{{fs.url}}\\\" height=\\\"400\\\" width=\\\"400\\\" />\\n    </div>\\n  </div>\\n</div> -->\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/thumbnail/thumbnail.html\n ** module id = 30\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/thumbnail/thumbnail.html?");
+	eval("module.exports = \"<div class=\\\"container\\\">\\n  <div class=\\\"row\\\">\\n    <div ng-repeat=\\\"image in tc.images\\\" class=\\\"col-xs-2\\\">\\n      <a href=\\\"#/fullsize/{{image.id}}\\\" class=\\\"thumbnail\\\">\\n        <img ng-src=\\\"{{image.url}}\\\" height=\\\"100\\\" width=\\\"100\\\" />\\n      </a>\\n    </div>\\n  </div>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/components/thumbnail/thumbnail.html\n ** module id = 30\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/components/thumbnail/thumbnail.html?");
 
 /***/ },
 /* 31 */
@@ -198,6 +198,12 @@
 /***/ function(module, exports) {
 
 	eval("module.exports = \"<div>\\n  <h1>Fullsize: </h1>\\n  <ul>\\n      <div data-mmm-fullsize-directive data-url=\\\"{{img.image.url}}\\\" id=\\\"{{img.image.id}}\\\" description=\\\"{{img.image.description}}\\\"></div>\\n  </ul>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/html/fullsize.html\n ** module id = 33\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/html/fullsize.html?");
+
+/***/ },
+/* 34 */
+/***/ function(module, exports) {
+
+	eval("module.exports = \"\\n<div>\\n  <h1>Will the images display? : Thumbnail</h1>\\n  <ul>\\n    <div data-mmm-thumbnail-directive data-images=\\\"img.images\\\"></div>\\n  </ul>\\n</div>\\n\\n<div class=\\\"container\\\">\\n  <h1>Will the home display?</h1>\\n  <div class=\\\"column\\\" data-mmm-home-directive>\\n  </div>\\n</div>\\n\\n<div>\\n  <h1>Fullsize: </h1>\\n  <ul>\\n    <div data-mmm-fullsize-directive data-url=\\\"{{img.images[1].url}}\\\" id=\\\"{{img.image[0].id}}\\\" description=\\\"{{img.image[0].description}}\\\"></div>\\n  </ul>\\n</div>\\n\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/html/fullDisplay.html\n ** module id = 34\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/html/fullDisplay.html?");
 
 /***/ }
 /******/ ]);

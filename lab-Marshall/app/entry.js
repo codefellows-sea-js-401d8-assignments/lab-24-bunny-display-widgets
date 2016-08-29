@@ -14,7 +14,7 @@ demoApp.config(['$routeProvider', function($route) {
     .when('/', {
       template: require('./html/home.html'),
       controller: 'ImgController',
-      controllerAs: 'hd'
+      controllerAs: 'img'
     })
     .when('/thumbnail', {
       template: require('./html/thumbnail.html'),
@@ -23,6 +23,11 @@ demoApp.config(['$routeProvider', function($route) {
     })
     .when('/fullsize/:id', {
       template: require('./html/fullsize.html'),
+      controller: 'ImgController',
+      controllerAs: 'img'
+    })
+    .when('/fulldisplay', {
+      template: require('./html/fullDisplay.html'),
       controller: 'ImgController',
       controllerAs: 'img'
     })
