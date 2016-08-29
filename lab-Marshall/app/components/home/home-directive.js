@@ -1,16 +1,17 @@
-' use strict';
+'use strict';
 
-module.exports = function(demoApp){
-  demoApp.directive('mmmHomeDirective', function(){
+module.exports = function(app) {
+  app.directive('mmmHomeDirective', function() {
     return {
+      restrict: 'EAC',
       template: require('./home.html'),
-      controller: 'HomeController',
+      controller: 'ImgController',
       controllerAs: 'hc',
       bindToController: true,
       scope: {
-        id: '@',
-        url: '@',
-        description: '@'
+        title: '@',
+        description: '=',
+        url: '='
       }
     };
   });

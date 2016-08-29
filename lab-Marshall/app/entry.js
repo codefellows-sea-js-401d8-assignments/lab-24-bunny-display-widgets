@@ -14,7 +14,7 @@ demoApp.config(['$routeProvider', function($route) {
     .when('/', {
       template: require('./html/home.html'),
       controller: 'ImgController',
-      controllerAs: 'img'
+      controllerAs: 'hd'
     })
     .when('/thumbnail', {
       template: require('./html/thumbnail.html'),

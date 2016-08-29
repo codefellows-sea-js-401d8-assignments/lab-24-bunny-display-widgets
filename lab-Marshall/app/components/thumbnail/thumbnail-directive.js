@@ -8,9 +8,7 @@ module.exports = function(demoApp){
       controllerAs: 'tc',
       bindToController: true,
       scope: {
-        description: '@',
-        id: '@',
-        url: '@'
+        images: '='
       }
     };
   });

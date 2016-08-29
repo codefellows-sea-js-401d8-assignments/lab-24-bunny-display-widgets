@@ -5559,10 +5559,13 @@ body {
   height: 100%; }
 
 body {
-  background-color: #eee; }
+  background-color: #000; }
 
 .brand {
   font-size: 1em; }
 
 hr {
-  border-top: 1px solid #8c8b8b; }
+  border-top: 1px solid #eee; }
+
+h1, h2 {
+  color: #eee; }
