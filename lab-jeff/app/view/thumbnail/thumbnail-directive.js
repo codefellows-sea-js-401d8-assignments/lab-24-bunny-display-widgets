@@ -10,6 +10,7 @@ lorApp.directive('jgThumbnailDirective', function(){
       url: '@',
       name: '@',
       id: '@',
+      galleryName: '=',
     },
     bindToController: true,
     controller: 'ThumbnailController',

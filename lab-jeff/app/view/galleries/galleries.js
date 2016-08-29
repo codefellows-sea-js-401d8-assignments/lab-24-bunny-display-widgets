@@ -7,5 +7,4 @@ lorApp.controller('GalleriesController', ['$rootScope', GalleriesController]);
 
 function GalleriesController($rootScope) {
   this.imageGalleries = $rootScope.imageGalleriesData;
-  console.log(this.imageGalleries);
 }

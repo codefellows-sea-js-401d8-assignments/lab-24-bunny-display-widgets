@@ -8,17 +8,17 @@ lorApp.controller('ThumbnailController', ['$rootScope', '$routeParams', '$locati
 function ThumbnailController($rootScope, $routeParams, $location) {
   this.imageGalleries = $rootScope.imageGalleriesData;
 
-  let galleryName = $routeParams.galleryName;
+  this.galleryName = $routeParams.galleryName;
 
-  if (galleryName === 'hobbits') {
+  if (this.galleryName === 'hobbits') {
     this.currentGallery = this.imageGalleries[0];
   }
 
-  else if (galleryName === 'dwarves') {
+  else if (this.galleryName === 'dwarves') {
     this.currentGallery = this.imageGalleries[1];
   }
 
-  else if (galleryName === 'humans') {
+  else if (this.galleryName === 'humans') {
     this.currentGallery = this.imageGalleries[2];
   }
 
