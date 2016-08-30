@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = function(app) {
-  require('./demo_controller')(app);
+  require('./cat_controller')(app);
 };

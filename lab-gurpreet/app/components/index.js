@@ -1,6 +1,7 @@
 'use strict';
 
-module.exports = function(app){
-  require('./dummy-component')(app);
-  require('./another-component')(app);
+module.exports = function(app) {
+  require('./thumbnail-component')(app);
+  require('./list-component')(app);
+  require('./fullsize-component')(app);
 };
