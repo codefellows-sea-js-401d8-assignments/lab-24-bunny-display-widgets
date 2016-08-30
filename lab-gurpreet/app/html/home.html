@@ -1,0 +1,9 @@
+<div class="container">
+  <ul>
+    <li ng-repeat="cat in bc.images">
+      <div data-es-list-directive data-description="{{cat.description}}" data-url="{{cat.url}}"></div>
+    </li>
+  </ul>
+  <div class="col-xs-3" ng-repeat="cat in bc.images" data-es-thumbnail-directive data-url="{{cat.url}}" data-description="{{cat.description}}"></div>
+  <div ng-repeat="cat in bc.images" data-es-fullsize-directive data-url="{{cat.url}}"></div>
+</div>
