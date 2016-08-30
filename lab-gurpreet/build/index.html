@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-        <meta charset="UTF-8">
-        <title></title>
-</head>
-<body data-ng-app="demoApp">
-  <main data-ng-view></main>
+<html ng-app="catApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cat App</title>
+    <script src="bundle.js"></script>
+    <link rel="stylesheet" href="bundle.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-inverse">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#/">Cat App</a>
+          </div>
 
-                  <script src="build/bundle.js"></script>
-</body>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/"><i class="fa fa-home>"></i>Home</a></li>
+            <li><a href="#/thumbnail"><i class="fa fa-picture-o>"></i>Thumbnail</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main ng-view>
+    </main>
+  </body>
 </html>
