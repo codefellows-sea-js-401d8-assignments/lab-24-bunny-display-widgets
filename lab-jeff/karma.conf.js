@@ -35,7 +35,7 @@ module.exports = function(config) {
     webpack: webpackConfig,
     preprocessors: {
       'app/entry.js': ['webpack', 'sourcemap'],
-      'test/*-test.js': ['babel'],
+      'test/*-test.js': ['webpack'],
     },
 
 
