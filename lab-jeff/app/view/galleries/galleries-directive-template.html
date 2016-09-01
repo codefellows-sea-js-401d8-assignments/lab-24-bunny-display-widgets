@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <a data-ng-repeat="gallery in galleriesCtrl.imageGalleries" href="#/galleries/{{ gallery.galleryName}}">
+      <button class="button btn-default" type="button" name="{{ gallery.galleryName }}">
+        {{ gallery.galleryName }}
+      </button>
+    </a>
+  </div>
+</div>
